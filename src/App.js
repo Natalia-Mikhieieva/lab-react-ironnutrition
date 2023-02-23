@@ -1,24 +1,18 @@
 import './App.css';
+import { useState } from 'react';
 import foods from './foods.json';
 
-import { Card, Row, Col, Divider, Input, Button } from 'antd';
 
 function App() {
+  const [allFoods, setAllFoods] = useState(foods);
+
   // After importing the components we can render them directly:
   return (
-    <div>
-      <Row>
-        <Col>
-          <Divider>Fancy Input</Divider>
-          <Input value={''} onChange={() => {}} />
-        </Col>
-
-        <Col>
-          <Card title={'Fancy Card'}>
-            <Button onClick={() => {}}>Fancy Button</Button>
-          </Card>
-        </Col>
-      </Row>
+    <div className="App">
+      <div>
+        <p> {foods.name}</p>
+        <img src={foods.name} alt={foods.name} width={150} />
+      </div>
     </div>
   );
 }
